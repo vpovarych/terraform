@@ -1,39 +1,28 @@
-#----------------------------------------------------------
-# My Terraform
-#
-# Build WebServer during Bootstrap
-#
-# Made by Denis Astahov
-#----------------------------------------------------------
-
-
 provider "aws" {
-  region = "ca-central-1"
+  region = "eu-central-1"
 }
-
 
 resource "aws_eip" "my_static_ip" {
   instance = aws_instance.my_webserver.id
   tags = {
     Name  = "Web Server IP"
-    Owner = "Denis Astahov"
+    Owner = "Viktor Povarych"
   }
 }
 
-
 resource "aws_instance" "my_webserver" {
-  ami                    = "ami-07ab3281411d31d04"
-  instance_type          = "t3.micro"
+  ami                    = "ami-0a1ee2fb28fe05df3"
+  instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.my_webserver.id]
   user_data = templatefile("user_data.sh.tpl", {
-    f_name = "Denis",
-    l_name = "Astahov",
-    names  = ["Vasya", "Kolya", "Petya", "John", "Donald", "Masha", "Lena", "Katya"]
+    f_name = "Viktor",
+    l_name = "Povarych",
+    names  = [3454, "Vasya", "Kolya", "Petya", "John", "Donald", "Lena"]
   })
 
   tags = {
     Name  = "Web Server Build by Terraform"
-    Owner = "Denis Astahov"
+    Owner = "Viktor P"
   }
 
   lifecycle {
@@ -68,6 +57,6 @@ resource "aws_security_group" "my_webserver" {
 
   tags = {
     Name  = "Web Server SecurityGroup"
-    Owner = "Denis Astahov"
+    Owner = "Viktor Povarych"
   }
 }

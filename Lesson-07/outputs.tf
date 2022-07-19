@@ -3,9 +3,9 @@ output "my_web_site_ip" {
   value       = aws_eip.my_static_ip.public_ip
 }
 
-output "my_instance_id" {
+output "my_instance_TYPE" {
   description = "InstanceID of our WebSite"
-  value       = aws_instance.my_webserver.id
+  value       = aws_instance.my_webserver.instance_type
 }
 
 output "my_instance_arn" {

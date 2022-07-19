@@ -23,7 +23,7 @@ EOF
 
   tags = {
     Name  = "PROD WebServer - ${terraform.workspace}"
-    Owner = "Denis Astahov"
+    Owner = "Viktor Povarych"
   }
 }
 
@@ -45,7 +45,7 @@ resource "aws_security_group" "web" {
 
   tags = {
     Name  = "Web Server SecurityGroup - ${terraform.workspace}"
-    Owner = "Denis Astahov"
+    Owner = "Viktor Povarych"
   }
 }
 
@@ -53,7 +53,7 @@ resource "aws_eip" "web" {
   instance = aws_instance.web.id
   tags = {
     Name  = "PROD WebServer IP - ${terraform.workspace}"
-    Owner = "Denis Astahov"
+    Owner = "Viktor Povarych"
   }
 }
 

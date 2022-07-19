@@ -7,7 +7,7 @@
 #----------------------------------------------------------
 
 provider "aws" {
-  region = "ca-central-1"
+  region = "eu-central-1"
 }
 
 data "terraform_remote_state" "global" {

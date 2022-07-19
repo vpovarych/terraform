@@ -68,6 +68,6 @@ resource "aws_security_group" "my_webserver" {
 
   tags = {
     Name  = "Dynamic SecurityGroup"
-    Owner = "Denis Astahov"
+    Owner = "Viktor Povarych"
   }
 }

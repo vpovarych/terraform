@@ -12,7 +12,7 @@ provider "aws" { // My DEV Account
 }
 
 provider "aws" { // My PROD Account
-  region = "ca-central-1"
+  region = "eu-central-1"
   alias  = "prod"
 
   assume_role {

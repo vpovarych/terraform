@@ -4,29 +4,35 @@ provider "aws" {}
 
 resource "aws_instance" "demo_websrv" {
     ami = "ami-0cff7528ff583bf9a"  # Amazon linux
-    count = 2
-    instance_type = "t2.micro"
+    count = 1
+    instance_type = "t1.micro"
       vpc_security_group_ids      = [aws_security_group.demo_WEB.id]
-      user_data = templatefile("script.sh.tpl", {
+      user_data = templatefile ("script.sh.tpl", {
       f_name = "Viktor",
-      L_name = "Povarych",
+      l_name = "Povarych",
       names = ["Bob", "John", "Anna"]
       }
-      )
+    )
+
+tags = {
+  Name = "Web server built by Terraform"
+  Owner = "vpovarych"
+
+ }
 }
 
 resource "aws_security_group" "demo_WEB" {
   name        = "WEBserver sec group"
-  description = "Allow TLS  traffic"
+  description = "Allow TLS traffic"
 
- /* ingress {
+  ingress {
     description      = "ssh"
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
    cidr_blocks      = ["0.0.0.0/0"]
      }
-*/
+
 
   ingress {
     description      = "HTTP"
@@ -44,6 +50,6 @@ resource "aws_security_group" "demo_WEB" {
     }
 
   tags = {
-    Name = "allow_tls:80"
+    Name = "allow_http on :80"
   }
 }

@@ -20,7 +20,7 @@ provider "aws" { // This is example to use Another AWS Account
 }
 
 provider "aws" {
-  region = "ca-central-1"
+  region = "eu-central-1"
 }
 
 provider "aws" {

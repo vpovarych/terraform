@@ -5,7 +5,7 @@ resource "aws_instance" "node1" {
   ebs_optimized          = true
   tags = {
     Name  = "Nomad Ubuntu Node-1"
-    Owner = "Denis Astahov"
+    Owner = "Viktor Povarych"
   }
 }
 
@@ -16,7 +16,7 @@ resource "aws_instance" "node2" {
   ebs_optimized          = true
   tags = {
     Name  = "Nomad Ubuntu Node-2"
-    Owner = "Denis Astahov"
+    Owner = "Viktor Povarych"
   }
 }
 
@@ -27,7 +27,7 @@ resource "aws_instance" "node3" {
   ebs_optimized          = true
   tags = {
     Name  = "Nomad Ubuntu Node-3"
-    Owner = "Denis Astahov"
+    Owner = "Viktor Povarych"
   }
 }
 
@@ -47,6 +47,6 @@ resource "aws_security_group" "nomad" {
   }
   tags = {
     Name  = "Nomad Cluster"
-    Owner = "Denis Astahov"
+    Owner = "Viktor Povarych"
   }
 }

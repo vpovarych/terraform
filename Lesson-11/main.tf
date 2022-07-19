@@ -46,7 +46,7 @@ resource "aws_security_group" "web" {
 
   tags = {
     Name  = "Dynamic SecurityGroup"
-    Owner = "Denis Astahov"
+    Owner = "Viktor Povarych"
   }
 }
 
@@ -79,7 +79,7 @@ resource "aws_autoscaling_group" "web" {
   dynamic "tag" {
     for_each = {
       Name   = "WebServer in ASG"
-      Owner  = "Denis Astahov"
+      Owner  = "Viktor Povarych"
       TAGKEY = "TAGVALUE"
     }
     content {

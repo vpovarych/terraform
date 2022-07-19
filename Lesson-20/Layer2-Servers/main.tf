@@ -6,7 +6,7 @@
 # Made by Denis Astahov
 #----------------------------------------------------------
 provider "aws" {
-  region = "ca-central-1"
+  region = "eu-central-1"
 }
 
 terraform {
@@ -84,7 +84,7 @@ resource "aws_security_group" "webserver" {
 
   tags = {
     Name = "${var.env}-web-server-sg"
-    Owner = "Denis Astahov"
+    Owner = "Viktor Povarych"
   }
 }
 
