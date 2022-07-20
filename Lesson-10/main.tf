@@ -48,7 +48,7 @@ data "aws_ami" "latest_windows_2016" {
 /*
 resource "aws_instance" "my_webserver_with_latest_ubuntu_ami" {
   ami           = data.aws_ami.latest_ubuntu.id
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
 }
 */
 

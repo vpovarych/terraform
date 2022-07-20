@@ -1,6 +1,6 @@
 resource "aws_instance" "node1" {
   ami                    = "ami-0a634ae95e11c6f91"
-  instance_type          = "t3.micro"
+  instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.nomad.id]
   ebs_optimized          = true
   tags = {
@@ -11,7 +11,7 @@ resource "aws_instance" "node1" {
 
 resource "aws_instance" "node2" {
   ami                    = "ami-0a634ae95e11c6f91"
-  instance_type          = "t3.micro"
+  instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.nomad.id]
   ebs_optimized          = true
   tags = {
@@ -22,7 +22,7 @@ resource "aws_instance" "node2" {
 
 resource "aws_instance" "node3" {
   ami                    = "ami-0a634ae95e11c6f91"
-  instance_type          = "t3.micro"
+  instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.nomad.id]
   ebs_optimized          = true
   tags = {

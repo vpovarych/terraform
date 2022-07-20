@@ -1,16 +1,10 @@
-#----------------------------------------------------------
-# My Terraform
-#
-# Made by Denis Astahov
-#----------------------------------------------------------
-
 provider "aws" {
   region = "eu-central-1"
 }
 
 resource "aws_instance" "my_server_web" {
-  ami                    = "ami-03a71cec707bfc3d7"
-  instance_type          = "t3.micro"
+  ami                    = "ami-0a1ee2fb28fe05df3"
+  instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.my_webserver.id]
 
   tags = {
@@ -21,20 +15,20 @@ resource "aws_instance" "my_server_web" {
 
 resource "aws_instance" "my_server_app" {
   ami                    = "ami-03a71cec707bfc3d7"
-  instance_type          = "t3.micro"
+  instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.my_webserver.id]
 
   tags = {
     Name = "Server-Application"
   }
-
+  #count = 2
   depends_on = [aws_instance.my_server_db]
 }
 
 
 resource "aws_instance" "my_server_db" {
   ami                    = "ami-03a71cec707bfc3d7"
-  instance_type          = "t3.micro"
+  instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.my_webserver.id]
 
   tags = {

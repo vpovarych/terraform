@@ -49,7 +49,7 @@ resource "null_resource" "command4" {
 
 resource "aws_instance" "myserver" {
   ami           = "ami-08a9b721ecc5b0a53"
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
   provisioner "local-exec" {
     command = "echo Hello from AWS Instance Creations!"
   }

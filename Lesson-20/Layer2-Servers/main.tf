@@ -41,7 +41,7 @@ data "aws_ami" "latest_amazon_linux" {
 
 resource "aws_instance" "web_server" {
   ami                    = data.aws_ami.latest_amazon_linux.id
-  instance_type          = "t3.micro"
+  instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.webserver.id]
   subnet_id              = data.terraform_remote_state.network.outputs.public_subnet_ids[0]
   user_data              = <<EOF

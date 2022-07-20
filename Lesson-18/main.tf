@@ -24,7 +24,7 @@ resource "aws_iam_user" "users" {
 resource "aws_instance" "servers" {
   count         = 3
   ami           = "ami-07ab3281411d31d04"
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
   tags = {
     Name = "Server Number ${count.index + 1}"
   }

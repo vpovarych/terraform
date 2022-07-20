@@ -13,7 +13,7 @@ variable "noprod_owner" {
 variable "ec2_size" {
   default = {
     "prod"    = "t3.medium"
-    "dev"     = "t3.micro"
+    "dev"     = "t2.micro"
     "staging" = "t2.small"
   }
 }

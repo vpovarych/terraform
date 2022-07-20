@@ -8,9 +8,9 @@ data "aws_vpcs" "my_vpcs" {}
 
 
 data "aws_vpc" "prod_vpc" {
-  tags = {
-    Name = "prod"
-  }
+ tags = {
+    Name = "prod"   # first create VPCs manually
+  } 
 }
 
 
@@ -41,6 +41,7 @@ resource "aws_subnet" "prod_subnet_2" {
 output "prod_vpc_id" {
   value = data.aws_vpc.prod_vpc.id
 }
+
 
 output "prod_vpc_cidr" {
   value = data.aws_vpc.prod_vpc.cidr_block

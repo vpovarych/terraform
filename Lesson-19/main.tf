@@ -65,7 +65,7 @@ data "aws_ami" "ger_latest_ubuntu" {
 
 #============================================================================
 resource "aws_instance" "my_default_server" {
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
   ami           = data.aws_ami.defaut_latest_ubuntu.id
   tags = {
     Name = "Default Server"
@@ -74,7 +74,7 @@ resource "aws_instance" "my_default_server" {
 
 resource "aws_instance" "my_usa_server" {
   provider      = aws.USA
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
   ami           = data.aws_ami.usa_latest_ubuntu.id
   tags = {
     Name = "USA Server"
@@ -83,7 +83,7 @@ resource "aws_instance" "my_usa_server" {
 
 resource "aws_instance" "my_ger_server" {
   provider      = aws.GER
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
   ami           = data.aws_ami.ger_latest_ubuntu.id
   tags = {
     Name = "GERMANY Server"
